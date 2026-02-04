@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Write a Function run only once</title>
+  </head>
+  <body>
+    <script>
+      function runOnce(fn) {
+        let hasRun = false;
+        return function () {
+          if (!hasRun) {
+            hasRun = true;
+            return fn();
+          }
+        };
+      }
+
+      const init=runOnce(()=>{
+        console.log('Function ran!')
+      })
+      init()
+    </script>
+  </body>
+</html>
