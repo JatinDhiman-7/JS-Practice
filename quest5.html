@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function add(a) {
+        let currentSum = a;
+        function inner(b) {
+          currentSum += b;
+          return inner;
+        }
+        inner.valueof = function () {
+          return currentSum;
+        };
+        inner.toString = function () {
+          return currentSum;
+        };
+        return inner;
+      }
+    </script>
+  </body>
+</html>
